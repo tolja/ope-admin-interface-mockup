@@ -1,0 +1,72 @@
+// Edit Context Modal
+#editUserModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editUserModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#editUserModalLabel.modal-title Benutzer bearbeiten
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+      .container
+        form.form-horizontal(role='form', method='POST', action='/register')
+          .row
+            .col-md-3.field-label-responsive
+              label(for='firstname') Neuer Vorname
+            .col-md-6
+              .form-group
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                    
+                  input#name.form-control(type='text', name='firstname', placeholder='John', required='', autofocus='')
+            .col-md-3
+              .form-control-feedback
+                span.text-danger.align-middle
+                  // Put name validation error messages here
+          .row
+            .col-md-3.field-label-responsive
+              label(for='lastname') Neuer Nachname
+            .col-md-6
+              .form-group
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                  
+                  input#name.form-control(type='text', name='nachname', placeholder='Doe', required='', autofocus='')
+            .col-md-3
+              .form-control-feedback
+                span.text-danger.align-middle
+                  // Put name validation error messages here
+          .row
+            .col-md-3.field-label-responsive
+              label(for='email') Neue E-Mail-Adresse
+            .col-md-6
+              .form-group
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                    
+                  input#email.form-control(type='text', name='email', placeholder='john@doe.com', required='', autofocus='')
+            .col-md-3
+              .form-control-feedback
+                span.text-danger.align-middle
+                  // Put e-mail validation error messages here
+          .row
+            .col-md-3.field-label-responsive
+              label(for='password') Neues Passwort
+            .col-md-6
+              .form-group.has-danger
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                  
+                  input#password.form-control(type='password', name='password', placeholder='Neues Passwort', required='')
+          .row
+            .col-md-3.field-label-responsive
+              label(for='password') Neues Passwort bestätigen
+            .col-md-6
+              .form-group
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                    
+                  input#password-confirm.form-control(type='password', name='password-confirmation', placeholder='Neues Passwort bestätigen', required='')
+
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Abbrechen
+          a.btn.btn-primary(href='#') Absenden

@@ -34,7 +34,7 @@ html(lang='en')
             |  Liste aller Kontexte
           .card-body
             .table-responsive
-              table#contextTable.table.table-bordered(width='100%', cellspacing='0')
+              table#editContextTable.table.table-bordered(width='100%', cellspacing='0')
                 thead
                   tr
                     th Name
@@ -74,6 +74,90 @@ html(lang='en')
                       button.btn.btn-success(type='submit')
                         
                             |  Erstellen
+                            
+                            
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Device einem Kontext zuordnen
+          .card-body
+              .container
+                form.form-horizontal(role='form', method='POST', action='/register')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='selectContext') Kontext auswählen
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          select#exampleSelect1.form-control
+                            option Forum Gummersbach
+                            option TH Köln, Campus Gummersbach
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='selectDevice') Device auswählen
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          select#exampleSelect1.form-control
+                            option Forum Fernseher
+                            option Forum Fernseher #2
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3
+                      button.btn.btn-success(type='submit')
+                        
+                            |  Zuordnen
+                            
+                            
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Kontext einer Umfrage zuordnen
+          .card-body
+              .container
+                form.form-horizontal(role='form', method='POST', action='/register')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='selectContext') Kontext auswählen
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          select#exampleSelect1.form-control
+                            option Forum Gummersbach
+                            option TH Köln, Campus Gummersbach
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='selectSurvey') Umfrage auswählen
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          select#exampleSelect1.form-control
+                            option Untersuchung zum Verhalten von Informatikern in Hochschulen
+                            option Öffentliche Umfrage im Rahmen des Modules "Computerethik"
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3
+                      button.btn.btn-success(type='submit')
+                        
+                            |  Zuordnen
                 
       // /.container-fluid
       // /.content-wrapper
@@ -83,6 +167,8 @@ html(lang='en')
       include includes/scroll-to-top.pug
 
       include includes/modals/logout.pug
+      
+      include includes/modals/editContext.pug
 
       include includes/js/core.pug
 

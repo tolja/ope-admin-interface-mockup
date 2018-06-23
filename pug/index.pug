@@ -35,7 +35,7 @@ html(lang='en')
             |  Neueste Umfragen
           .card-body
             .table-responsive
-              table#dataTable.table.table-bordered(width='100%', cellspacing='0')
+              table#homeDataTable.table.table-bordered(width='100%', cellspacing='0')
                 thead
                   tr
                     th Titel
@@ -96,6 +96,8 @@ html(lang='en')
       include includes/scroll-to-top.pug
 
       include includes/modals/logout.pug
+      
+      include includes/modals/placeholderModal.pug
 
       include includes/js/core.pug
 

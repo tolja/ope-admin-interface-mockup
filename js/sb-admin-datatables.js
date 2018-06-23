@@ -11,7 +11,7 @@ $(document).ready(function() {
             "columnDefs": [ {
                 "targets": -1,
                 "data": null,
-                "defaultContent": "<button>Verwalten</button>"
+                "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#placeholderModal'>Detailseite</button>"
             } ]
         } );
 
@@ -31,5 +31,28 @@ $(document).ready(function() {
                   } ]
               } );
 
+              $('#editContextTable').DataTable( {
+                     "columnDefs": [ {
+                         "targets": -1,
+                         "data": null,
+                         "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editContextModal'>Verwalten</button>"
+                     } ]
+                 } );
+
+                 $('#editUserTable').DataTable( {
+                        "columnDefs": [ {
+                            "targets": -1,
+                            "data": null,
+                            "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editUserModal'>Verwalten</button>"
+                        } ]
+                    } );
+
+                    $('#homeDataTable').DataTable( {
+                           "columnDefs": [ {
+                               "targets": -1,
+                               "data": null,
+                               "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#placeholderModal'>Detailseite</button>"
+                           } ]
+                       } );
 
 });

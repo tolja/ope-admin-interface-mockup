@@ -33,7 +33,7 @@ html(lang='en')
             |  Liste der Benutzer
           .card-body
             .table-responsive
-            table#userTable.table.table-bordered(width='100%', cellspacing='0')
+            table#editUserTable.table.table-bordered(width='100%', cellspacing='0')
               thead
                 tr
                   th Vorname
@@ -135,6 +135,8 @@ html(lang='en')
       include includes/scroll-to-top.pug
 
       include includes/modals/logout.pug
+      
+      include includes/modals/editUser.pug
 
       include includes/js/core.pug
 

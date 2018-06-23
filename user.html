@@ -73,7 +73,7 @@
                 <div class="card-header"><i class="fa fa-table"></i> Liste der Benutzer</div>
                 <div class="card-body">
                     <div class="table-responsive"></div>
-                    <table class="table table-bordered" id="userTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="editUserTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Vorname</th>
@@ -182,6 +182,75 @@
                         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><a class="btn btn-primary" href="login.html">Logout</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Context Modal-->
+        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUserModalLabel">Benutzer bearbeiten</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body"></div>
+                    <div class="container">
+                        <form class="form-horizontal" role="form" method="POST" action="/register">
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="firstname">Neuer Vorname</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="name" type="text" name="firstname" placeholder="John" required="" autofocus=""></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="lastname">Neuer Nachname</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="name" type="text" name="nachname" placeholder="Doe" required="" autofocus=""></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="email">Neue E-Mail-Adresse</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="email" type="text" name="email" placeholder="john@doe.com" required="" autofocus=""></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put e-mail validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="password">Neues Passwort</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group has-danger">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="password" type="password" name="password" placeholder="Neues Passwort" required=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="password">Neues Passwort bestätigen</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="password-confirm" type="password" name="password-confirmation" placeholder="Neues Passwort bestätigen" required=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Abbrechen</button><a class="btn btn-primary" href="#">Absenden</a></div>
+                    </div>
                 </div>
             </div>
         </div>

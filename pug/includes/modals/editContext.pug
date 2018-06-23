@@ -1,0 +1,27 @@
+// Edit Context Modal
+#editContextModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editContextModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#editContextModalLabel.modal-title Kontext bearbeiten
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+      .container
+        form.form-horizontal(role='form', method='POST', action='/register')
+          .row
+            .col-md-3.field-label-responsive
+              label(for='name') Name
+            .col-md-6
+              .form-group
+                .input-group.mb-2.mr-sm-2.mb-sm-0
+                  .input-group-addon(style='width: 2.6rem')
+                  input#name.form-control(type='text', name='name', placeholder='Forum Gummersbach', required='', autofocus='')
+            .col-md-3
+              .form-control-feedback
+                span.text-danger.align-middle
+                  // Put name validation error messages here
+
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Abbrechen
+          a.btn.btn-primary(href='#') Absenden

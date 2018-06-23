@@ -73,7 +73,7 @@
                 <div class="card-header"><i class="fa fa-table"></i> Liste aller Kontexte</div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="contextTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="editContextTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -120,6 +120,78 @@
                     </div>
                 </div>
             </div>
+            <div class="card mb-3">
+                <div class="card-header"><i class="fa fa-table"></i> Device einem Kontext zuordnen</div>
+                <div class="card-body">
+                    <div class="container">
+                        <form class="form-horizontal" role="form" method="POST" action="/register">
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="selectContext">Kontext auswählen</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><select class="form-control" id="exampleSelect1"><option>Forum Gummersbach</option><option>TH Köln, Campus Gummersbach</option></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="selectDevice">Device auswählen</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><select class="form-control" id="exampleSelect1"><option>Forum Fernseher</option><option>Forum Fernseher #2</option></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-success" type="submit"> Zuordnen</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header"><i class="fa fa-table"></i> Kontext einer Umfrage zuordnen</div>
+                <div class="card-body">
+                    <div class="container">
+                        <form class="form-horizontal" role="form" method="POST" action="/register">
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="selectContext">Kontext auswählen</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><select class="form-control" id="exampleSelect1"><option>Forum Gummersbach</option><option>TH Köln, Campus Gummersbach</option></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="selectSurvey">Umfrage auswählen</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><select class="form-control" id="exampleSelect1"><option>Untersuchung zum Verhalten von Informatikern in Hochschulen</option><option>Öffentliche Umfrage im Rahmen des Modules "Computerethik"</option></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-success" type="submit"> Zuordnen</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.container-fluid-->
         <!-- /.content-wrapper-->
@@ -137,6 +209,33 @@
                         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><a class="btn btn-primary" href="login.html">Logout</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Context Modal-->
+        <div class="modal fade" id="editContextModal" tabindex="-1" role="dialog" aria-labelledby="editContextModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editContextModalLabel">Kontext bearbeiten</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body"></div>
+                    <div class="container">
+                        <form class="form-horizontal" role="form" method="POST" action="/register">
+                            <div class="row">
+                                <div class="col-md-3 field-label-responsive"><label for="name">Name</label></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem;"></div><input class="form-control" id="name" type="text" name="name" placeholder="Forum Gummersbach" required="" autofocus=""></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback"><span class="text-danger align-middle"><!-- Put name validation error messages here--></span></div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Abbrechen</button><a class="btn btn-primary" href="#">Absenden</a></div>
+                    </div>
                 </div>
             </div>
         </div>
