@@ -1,0 +1,71 @@
+// Navigation
+nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  a.navbar-brand(href='index.html') Open Product Evaluation - Admin Interface
+  button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarResponsive.collapse.navbar-collapse
+    ul#exampleAccordion.navbar-nav.navbar-sidenav
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Dashboard')
+        a.nav-link(href='index.html')
+          i.fa.fa-fw.fa-dashboard
+          span.nav-link-text
+            | Dashboard
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Umfragen')
+        a.nav-link(href='surveys.html')
+          i.fa.fa-fw.fa-table
+          span.nav-link-text
+            | Umfragen
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Kontexte')
+        a.nav-link(href='contexts.html')
+          i.fa.fa-fw.fa-table
+          span.nav-link-text
+            | Kontexte
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Dashboard')
+        a.nav-link(href='user.html')
+          i.fa.fa-fw.fa-user
+          span.nav-link-text
+            | Benutzer
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Example Pages')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseExamplePages', data-parent='#exampleAccordion')
+          i.fa.fa-fw.fa-file
+          span.nav-link-text
+            | Example Pages
+        ul#collapseExamplePages.sidenav-second-level.collapse
+          li
+            a(href='login.html') Login Page
+          li
+            a(href='register.html') Registration Page
+          li
+            a(href='forgot-password.html') Forgot Password Page
+          li
+            a(href='blank.html') Blank Page
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Menu Levels')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseMulti', data-parent='#exampleAccordion')
+          i.fa.fa-fw.fa-sitemap
+          span.nav-link-text
+            | Menu Levels
+        ul#collapseMulti.sidenav-second-level.collapse
+          li
+            a(href='#') Second Level Item
+          li
+            a(href='#') Second Level Item
+          li
+            a(href='#') Second Level Item
+          li
+            a.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseMulti2') Third Level
+            ul#collapseMulti2.sidenav-third-level.collapse
+              li
+                a(href='#') Third Level Item
+              li
+                a(href='#') Third Level Item
+              li
+                a(href='#') Third Level Item
+    ul.navbar-nav.sidenav-toggler
+      li.nav-item
+        a#sidenavToggler.nav-link.text-center
+          i.fa.fa-fw.fa-angle-left
+    ul.navbar-nav.ml-auto
+      li.nav-item
+        a.nav-link(data-toggle='modal', data-target='#exampleModal')
+          i.fa.fa-fw.fa-sign-out
+          | Logout

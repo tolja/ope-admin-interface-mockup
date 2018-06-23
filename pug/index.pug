@@ -1,0 +1,110 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title Open Product Evaluation - Admin Interface
+
+    include includes/css/core.pug
+
+    // Page level plugin CSS
+    link(href='vendor/datatables/dataTables.bootstrap4.css', rel='stylesheet')
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container-fluid
+        // Breadcrumbs
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Dashboard
+
+
+        // Example DataTables Card
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Neueste Umfragen
+          .card-body
+            .table-responsive
+              table#dataTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Titel
+                    th Beschreibung
+                    th Ersteller
+                    th isPublic
+                    th Question Types
+                    th Kontexte
+                    th Verwaltung
+                tbody
+                  tr
+                    td Untersuchung zum Verhalten von Informatikern in Hochschulen
+                    td Eine wissenschaftliche Umfrage mit der Forschungsfrage: "Wie verhalten sich Informatiker?
+                    td John Doe
+                    td true
+                    td CHOICE, REGULATOR, LIKE
+                    td Forum Gummersbach
+                    td test
+                  tr
+                    td Öffentliche Umfrage im Rahmen des Modules "Computerethik"
+                    td Eine wissenschaftliche Umfrage mit der Forschungsfrage: "Künstliche Intelligenz?
+                    td Jane Doe
+                    td false
+                    td RANKING, LIKE
+                    td TH Köln, Campus Gummersbach
+                    td test
+          
+        // Example DataTables Card
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Neueste Kontexte
+          .card-body
+            .table-responsive
+              table#contextTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Name
+                    th Besitzer
+                    th Devices
+                    th Aktive Umfrage
+                    th Verwaltung
+                tbody
+                  tr
+                    td Forum Gummersbach
+                    td John Doe
+                    td Forum Fernseher, Forum Fernseher #2
+                    td Untersuchung zum Verhalten von Informatikern in Hochschulen  
+                    td test 
+                    
+
+
+      // /.container-fluid
+      // /.content-wrapper
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+
+      include includes/js/core.pug
+
+      // Page level plugin JavaScript
+
+      script(src='vendor/datatables/jquery.dataTables.js')
+      script(src='vendor/datatables/dataTables.bootstrap4.js')
+
+      include includes/js/custom.pug
+
+      // Custom scripts for this page
+      script(src='js/sb-admin-datatables.min.js')

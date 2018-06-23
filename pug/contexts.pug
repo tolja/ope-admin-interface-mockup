@@ -1,0 +1,96 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title SB Admin - Start Bootstrap Template
+
+    include includes/css/core.pug
+
+    // Page level plugin CSS
+    link(href='vendor/datatables/dataTables.bootstrap4.css', rel='stylesheet')
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container-fluid
+        // Breadcrumbs
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Kontexte
+          
+        // Example DataTables Card
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Liste aller Kontexte
+          .card-body
+            .table-responsive
+              table#contextTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Name
+                    th Besitzer
+                    th Devices
+                    th Aktive Umfrage
+                    th Verwaltung
+                tbody
+                  tr
+                    td Forum Gummersbach
+                    td John Doe
+                    td Forum Fernseher, Forum Fernseher #2
+                    td Untersuchung zum Verhalten von Informatikern in Hochschulen  
+                    td test 
+                    
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Kontext erstellen
+          .card-body
+              .container
+                form.form-horizontal(role='form', method='POST', action='/register')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='name') Name
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          input#name.form-control(type='text', name='name', placeholder='Name', required='', autofocus='')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3
+                      button.btn.btn-success(type='submit')
+                        
+                            |  Erstellen
+                
+      // /.container-fluid
+      // /.content-wrapper
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+
+      include includes/js/core.pug
+
+      // Page level plugin JavaScript
+      script(src='vendor/datatables/jquery.dataTables.js')
+      script(src='vendor/datatables/dataTables.bootstrap4.js')
+
+      include includes/js/custom.pug
+
+      // Custom scripts for this page
+      script(src='js/sb-admin-datatables.min.js')

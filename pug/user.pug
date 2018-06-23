@@ -1,0 +1,148 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title SB Admin - Start Bootstrap Template
+
+    include includes/css/core.pug
+
+    // Page level plugin CSS
+    link(href='vendor/datatables/dataTables.bootstrap4.css', rel='stylesheet')
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container-fluid
+        // Breadcrumbs
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Benutzer
+        // Example DataTables Card
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Liste der Benutzer
+          .card-body
+            .table-responsive
+            table#userTable.table.table-bordered(width='100%', cellspacing='0')
+              thead
+                tr
+                  th Vorname
+                  th Nachname
+                  th E-Mail
+                  th Verwaltung
+              tbody
+                tr
+                  td John
+                  td Doe
+                  td john@doe.com
+                  td test
+                tr
+                  td Jane
+                  td Doe
+                  td jane@doe.com
+                  td test
+                  
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Benutzer erstellen
+          .card-body
+              .container
+                form.form-horizontal(role='form', method='POST', action='/register')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='firstname') Vorname
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                            
+                          input#name.form-control(type='text', name='firstname', placeholder='John', required='', autofocus='')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='lastname') Nachname
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          
+                          input#name.form-control(type='text', name='nachname', placeholder='Doe', required='', autofocus='')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='email') E-Mail-Adresse
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                            
+                          input#email.form-control(type='text', name='email', placeholder='john@doe.com', required='', autofocus='')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put e-mail validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='password') Passwort
+                    .col-md-6
+                      .form-group.has-danger
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          
+                          input#password.form-control(type='password', name='password', placeholder='Passwort', required='')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='password') Passwort bestätigen
+                    .col-md-6
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                            
+                          input#password-confirm.form-control(type='password', name='password-confirmation', placeholder='Passwort bestätigen', required='')
+                  .row
+                    .col-md-3
+                  
+                      button.btn.btn-success(type='submit')
+                        
+                            |  Registrieren
+
+
+                    
+                  
+                
+      // /.container-fluid
+      // /.content-wrapper
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+
+      include includes/js/core.pug
+
+      // Page level plugin JavaScript
+      script(src='vendor/datatables/jquery.dataTables.js')
+      script(src='vendor/datatables/dataTables.bootstrap4.js')
+
+      include includes/js/custom.pug
+
+      // Custom scripts for this page
+      script(src='js/sb-admin-datatables.min.js')
