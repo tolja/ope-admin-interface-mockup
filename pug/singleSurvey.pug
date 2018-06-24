@@ -152,7 +152,66 @@ html(lang='en')
                     td null
                     td <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editRegulatorQuestion'>Verwalten</button>
                     
-                
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Choice Antworten von Umfrage ID #1
+          .card-body
+            .table-responsive
+              table#answersTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Frage ID #
+                    th Frage Value
+                    th Choice Code
+                tbody
+                  tr
+                    td 1
+                    td Bitte treffen Sie eine Auswahl:
+                    td A
+                    
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Like Antworten von Umfrage ID #1
+          .card-body
+            .table-responsive
+              table#likesTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Frage ID #
+                    th Frage Value
+                    th Liked
+                tbody
+                  tr
+                    td 4
+                    td Gefällt Ihnen dieses Objekt?
+                    td true
+                  tr
+                    td 5
+                    td Gefällt Ihnen dieses Modell?
+                    td null
+                    
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Rating Antworten von Umfrage ID #1
+          .card-body
+            .table-responsive
+              table#ratingTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th Frage ID #
+                    th Frage Value
+                    th rating
+                    th normalized
+                tbody
+                  tr
+                    td 10
+                    td Wie sehr sind Sie mit dieser Frage zufrieden?
+                    td 1.0
+                    td 0.00001123323234234234
+                  
       // /.container-fluid
       // /.content-wrapper
 
