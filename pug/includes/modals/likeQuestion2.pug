@@ -1,0 +1,58 @@
+// Edit Survey Modal
+#editLikeQuestion2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editLikeQuestionLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#editLikeQuestionLabel.modal-title Like Question bearbeiten
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        .container
+          form.form-horizontal(role='form', method='POST', action='/register')
+            .row
+              .col-md-3.field-label-responsive
+                label(for='id') ID
+              .col-md-9
+                .form-group
+                  p#id.form-control-static #5
+                  
+            .row
+              .col-md-3.field-label-responsive
+                label(for='creationDate') creationDate
+              .col-md-9
+                .form-group
+                  p#creationDate.form-control-static 12.11.2011 11:12:11 Uhr
+            .row
+              .col-md-3.field-label-responsive
+                label(for='lastUpdate') lastUpdate
+              .col-md-9
+                .form-group
+                  p#lastUpdate.form-control-static 12.11.2011 11:12:11 Uhr
+            .row
+              .col-md-3.field-label-responsive
+                label(for='value') Value
+              .col-md-9
+                .form-group
+                  input#value.form-control(type='text', name='value', placeholder='', required='', autofocus='',value='Gefällt Ihnen dieses Modell?')
+              .col-md-3
+                .form-control-feedback
+                  span.text-danger.align-middle
+                    // Put name validation error messages here
+            .row
+              .col-md-3.field-label-responsive
+                label(for='description') Beschreibung
+              .col-md-9
+                .form-group
+                  input#description.form-control(type='text', name='beschreibung', placeholder='', required='', autofocus='',value='Bitte zeigen Sie mit einem "Like", ob Ihnen dieses Model gefällt.')
+              .col-md-3
+                .form-control-feedback
+                  span.text-danger.align-middle
+                    // Put name validation error messages here
+            
+                  
+            
+
+
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Abbrechen
+          a.btn.btn-primary(href='#') Absenden

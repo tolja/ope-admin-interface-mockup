@@ -27,7 +27,7 @@ $(document).ready(function() {
                   "columnDefs": [ {
                       "targets": -1,
                       "data": null,
-                      "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editSurveyModal'>Verwalten</button>"
+                      "defaultContent": "<a role='button' class='btn btn-primary' href='singleSurvey.html'>Verwalten</a>"
                   } ]
               } );
 

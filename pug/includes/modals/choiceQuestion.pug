@@ -1,0 +1,80 @@
+// Edit Survey Modal
+#editChoiceQuestion.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editChoiceQuestionLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#editChoiceQuestionLabel.modal-title Choice Question bearbeiten
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        .container
+          form.form-horizontal(role='form', method='POST', action='/register')
+            .row
+              .col-md-3.field-label-responsive
+                label(for='id') ID
+              .col-md-9
+                .form-group
+                  p#id.form-control-static #1
+                  
+            .row
+              .col-md-3.field-label-responsive
+                label(for='creationDate') creationDate
+              .col-md-9
+                .form-group
+                  p#creationDate.form-control-static 12.12.2012 12:12:12 Uhr
+            .row
+              .col-md-3.field-label-responsive
+                label(for='lastUpdate') lastUpdate
+              .col-md-9
+                .form-group
+                  p#lastUpdate.form-control-static 12.12.2012 12:12:12 Uhr
+            .row
+              .col-md-3.field-label-responsive
+                label(for='value') Value
+              .col-md-9
+                .form-group
+                  input#value.form-control(type='text', name='value', placeholder='', required='', autofocus='',value='Bitte treffen Sie eine Auswahl:')
+              .col-md-3
+                .form-control-feedback
+                  span.text-danger.align-middle
+                    // Put name validation error messages here
+            .row
+              .col-md-3.field-label-responsive
+                label(for='description') Beschreibung
+              .col-md-9
+                .form-group
+                  input#description.form-control(type='text', name='beschreibung', placeholder='Beschreibung', required='', autofocus='')
+              .col-md-3
+                .form-control-feedback
+                  span.text-danger.align-middle
+                    // Put name validation error messages here
+            .row
+              .col-md-2.field-label-responsive
+                label(for='code') Code
+              .col-md-3
+                .form-group
+                  input#codeA.form-control(type='text', name='code', placeholder='', required='', autofocus='', value='A')
+              .col-2.field-label-responsive
+                label(for='label') Label
+              .col-md-5
+                .form-group
+                  input#labelA.form-control(type='text', name='label', placeholder='', required='', autofocus='', value='Auswahl A')
+            .row
+              .col-md-2.field-label-responsive
+                label(for='code') Code
+              .col-md-3
+                .form-group
+                  input#codeB.form-control(type='text', name='code', placeholder='', required='', autofocus='', value='B')
+              .col-2.field-label-responsive
+                label(for='label') Label
+              .col-md-5
+                .form-group
+                  input#labelB.form-control(type='text', name='label', placeholder='', required='', autofocus='', value='Auswahl B')
+              
+                  
+            
+
+
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Abbrechen
+          a.btn.btn-primary(href='#') Absenden

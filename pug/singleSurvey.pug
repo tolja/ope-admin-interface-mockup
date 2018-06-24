@@ -1,0 +1,181 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title Open Product Evaluation - Admin Interface
+
+    include includes/css/core.pug
+
+    // Page level plugin CSS
+    link(href='vendor/datatables/dataTables.bootstrap4.css', rel='stylesheet')
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container-fluid
+        // Breadcrumbs
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Einzelne Umfrage
+        // Example DataTables Card
+        
+                    
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Umfrage ID #1
+          .card-body
+              .container
+                form.form-horizontal(role='form', method='POST', action='/register')
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='creationDate') creationDate
+                    .col-md-9
+                      .form-group
+                        p#creationDate.form-control-static 12.12.2012 12.12.12 Uhr
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='lastUpdate') lastUpdate
+                    .col-md-9
+                      .form-group
+                        p#lastUpdate.form-control-static 12.12.2012 12.12.12 Uhr
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='creator') creator
+                    .col-md-9
+                      .form-group
+                        p#creator.form-control-static John Doe
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='title') Titel
+                    .col-md-9
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                            
+                        input#title.form-control(type='text', name='title', placeholder='', required='', autofocus='', value='Untersuchung zum Verhalten von Informatikern in Hochschulen')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='description') Beschreibung
+                    .col-md-9
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          
+                        input#description.form-control(type='text', name='beschreibung', placeholder='', required='', autofocus='', value='Eine wissenschaftliche Umfrage mit der Forschungsfrage: "Wie verhalten sich Informatiker?')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='public') Öffentlich?
+                    .col-md-9
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                        input#public.form-control(type='checkbox', value='' checked='checked')
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put e-mail validation error messages here
+                  .row
+                    .col-md-3.field-label-responsive
+                      label(for='questionTypes') Fragentypen
+                    .col-md-9
+                      .form-group
+                        .input-group.mb-2.mr-sm-2.mb-sm-0
+                          .input-group-addon(style='width: 2.6rem')
+                          
+                        p#questionTypes.form-control-static CHOICE, REGULATOR, LIKE
+                    .col-md-3
+                      .form-control-feedback
+                        span.text-danger.align-middle
+                          // Put name validation error messages here
+                  
+                  .row
+                    .col-md-3
+                      button.btn.btn-success(type='submit')
+                        
+                            |  Ändern
+                            
+        .card.mb-3
+          .card-header
+            i.fa.fa-table
+            |  Fragen von Umfrage ID #1
+          .card-body
+            .table-responsive
+              table#editQuestionsTable.table.table-bordered(width='100%', cellspacing='0')
+                thead
+                  tr
+                    th ID
+                    th Question Type
+                    th Value
+                    th Beschreibung
+                    th Verwaltung
+                tbody
+                  tr
+                    td 1
+                    td CHOICE
+                    td Bitte treffen Sie eine Auswahl:
+                    td null
+                    td <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editChoiceQuestion'>Verwalten</button>
+                  tr
+                    td 4
+                    td LIKE
+                    td Gefällt Ihnen dieses Objekt?
+                    td Bitte zeigen Sie mit einem "Like", ob Ihnen dieses Objekt gefällt.
+                    td <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editLikeQuestion'>Verwalten</button>
+                  tr
+                    td 5
+                    td LIKE
+                    td Gefällt Ihnen dieses Modell?
+                    td Bitte zeigen Sie mit einem "Like", ob Ihnen dieses Modell gefällt.
+                    td <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editLikeQuestion2'>Verwalten</button>
+                  tr
+                    td 10
+                    td REGULATOR
+                    td Wie sehr sind Sie mit dieser Frage zufrieden?
+                    td null
+                    td <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editRegulatorQuestion'>Verwalten</button>
+                    
+                
+      // /.container-fluid
+      // /.content-wrapper
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+      
+      include includes/modals/editSurvey.pug
+      
+      include includes/modals/choiceQuestion.pug
+      include includes/modals/likeQuestion.pug
+      include includes/modals/likeQuestion2.pug
+      include includes/modals/regulatorQuestion.pug
+
+      include includes/js/core.pug
+
+      // Page level plugin JavaScript
+      script(src='vendor/datatables/jquery.dataTables.js')
+      script(src='vendor/datatables/dataTables.bootstrap4.js')
+
+      include includes/js/custom.pug
+
+      // Custom scripts for this page
+      script(src='js/sb-admin-datatables.min.js')
